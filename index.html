@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio & Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Theme 1: Light (default) ===== */
+    :root {
+      --bg-primary: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-header: rgba(255, 255, 255, 0.9);
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --primary-soft: #e0f2fe;
+      --primary-soft-text: #0369a1;
+      --accent: #0f766e;
+      --border: #e2e8f0;
+      --chip-bg: #f1f5f9;
+      --chip-border: #e2e8f0;
+      --chip-text: #334155;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -2px rgba(0,0,0,.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.07), 0 4px 6px -4px rgba(0,0,0,.05);
+      --font-fa: 'Vazirmatn', sans-serif;
+      --font-en: 'Inter', sans-serif;
+    }
+
+    /* ===== Theme 2: Dark ===== */
+    body.theme-dark {
+      --bg-primary: #0b1220;
+      --bg-card: #131c2e;
+      --bg-header: rgba(11, 18, 32, 0.9);
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #7dd3fc;
+      --primary-soft: #0c3a52;
+      --primary-soft-text: #7dd3fc;
+      --accent: #2dd4bf;
+      --border: #24324a;
+      --chip-bg: #1b2740;
+      --chip-border: #2b3a55;
+      --chip-text: #cbd5e1;
+      --shadow: 0 4px 6px -1px rgba(0,0,0,.4), 0 2px 4px -2px rgba(0,0,0,.3);
+      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.5), 0 4px 6px -4px rgba(0,0,0,.4);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; transition: background-color .2s, border-color .2s, color .2s; }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-fa);
+      line-height: 1.6;
+    }
+    body.lang-en { font-family: var(--font-en); }
+
+    .container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      position: sticky; top: 0;
+      background: var(--bg-header);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100; padding: 16px 0;
+    }
+    .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 700; font-size: 1.25rem; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .logo-badge { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); display: inline-block; }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .nav-link { text-decoration: none; color: var(--text-muted); font-weight: 500; font-size: .95rem; transition: color .2s; }
+    .nav-link:hover { color: var(--primary); }
+
+    .lang-btn, .theme-btn {
+      background: var(--chip-bg);
+      border: 1px solid var(--border);
+      padding: 6px 14px; border-radius: 20px; cursor: pointer;
+      font-weight: 600; font-size: .85rem; color: var(--text-main);
+      font-family: inherit;
+      display: inline-flex; align-items: center; gap: 6px;
+      transition: all .2s ease;
+    }
+    .lang-btn:hover, .theme-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* Hero */
+    .hero { padding: 80px 0 60px; }
+    .hero-inner { display: flex; align-items: center; gap: 48px; }
+    .hero-content { flex: 1; }
+    .hero-avatar-wrapper {
+      width: 200px; height: 200px; border-radius: 50%; overflow: hidden;
+      border: 4px solid var(--bg-card); box-shadow: var(--shadow-lg);
+      flex-shrink: 0; background: var(--chip-bg);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .badge-status {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 12px; border-radius: 100px;
+      background: var(--primary-soft); color: var(--primary-soft-text);
+      font-size: .825rem; font-weight: 600; margin-bottom: 16px;
+    }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+    .hero h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 12px; line-height: 1.25; }
+    .hero h2 { font-size: 1.15rem; font-weight: 500; color: var(--primary); margin-bottom: 20px; }
+    .hero p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 30px; max-width: 620px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn {
+      padding: 10px 22px; border-radius: 8px; font-size: .95rem; font-weight: 600;
+      text-decoration: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
+      border: none; transition: all .2s ease; font-family: inherit;
+    }
+    .btn-primary { background: var(--primary); color: #0b1220; box-shadow: 0 2px 4px rgba(2,132,199,.25); }
+    body:not(.theme-dark) .btn-primary { color: #ffffff; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-secondary { background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border); }
+    .btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
+
+    section { padding: 60px 0; }
+    .section-alt { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .section-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+    .section-subtitle { color: var(--text-muted); font-size: .95rem; margin-bottom: 36px; }
+
+    /* Timeline */
+    .timeline {
+      position: relative; border-inline-start: 2px solid var(--border);
+      margin-inline-start: 12px; padding-inline-start: 24px;
+      display: flex; flex-direction: column; gap: 32px;
+    }
+    .timeline-item { position: relative; }
+    .timeline-dot {
+      position: absolute; inline-size: 12px; block-size: 12px; border-radius: 50%;
+      background: var(--primary); inset-inline-start: -31px; top: 6px;
+      box-shadow: 0 0 0 4px var(--bg-primary);
+    }
+    .timeline-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; box-shadow: var(--shadow); }
+    .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+    .timeline-title { font-size: 1.1rem; font-weight: 700; }
+    .timeline-company { font-size: .95rem; font-weight: 600; color: var(--primary); }
+    .timeline-date { font-size: .85rem; color: var(--text-muted); background: var(--chip-bg); padding: 4px 10px; border-radius: 6px; }
+    .timeline-desc { font-size: .925rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .skill-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; box-shadow: var(--shadow); }
+    .skill-category { font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill-tag { background: var(--chip-bg); border: 1px solid var(--chip-border); padding: 6px 12px; border-radius: 8px; font-size: .85rem; font-weight: 500; color: var(--chip-text); }
+
+    /* Beyond */
+    .beyond-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .beyond-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
+    .beyond-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .beyond-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .beyond-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+    .beyond-desc { font-size: .925rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 60px; background: var(--bg-card); text-align: center; }
+    .footer-content { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .social-links { display: flex; gap: 16px; }
+    .social-link { color: var(--text-muted); text-decoration: none; font-size: .9rem; transition: color .2s; }
+    .social-link:hover { color: var(--primary); }
+
+    @media (max-width: 768px) {
+      .hero-inner { flex-direction: column-reverse; text-align: center; gap: 28px; padding: 0; }
+      .hero { padding: 40px 0; }
+      .hero p { margin: 0 auto 24px; }
+      .hero-actions { justify-content: center; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body id="page-body">
+
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">
+        <span class="logo-badge"></span>
+        <span data-key="name">اسی | پورتفولیو</span>
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <nav class="nav-links">
+          <a href="#about" class="nav-link" data-key="nav_about">درباره من</a>
+          <a href="#experience" class="nav-link" data-key="nav_exp">سوابق</a>
+          <a href="#skills" class="nav-link" data-key="nav_skills">مهارت‌ها</a>
+          <a href="#beyond" class="nav-link" data-key="nav_beyond">فراتر از کار</a>
+        </nav>
+
+        <button class="theme-btn" id="themeToggle" title="Theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <button class="lang-btn" id="langToggle">
+          <span id="langLabel">English</span> 🌐
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero" id="about">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <div class="badge-status">
+          <span class="badge-dot"></span>
+          <span data-key="status">آماده همکاری و توسعه پروژه‌ها</span>
+        </div>
+        <h1 data-key="hero_title">سلام، من اسی هستم 👋</h1>
+        <h2 data-key="hero_role">متخصص مدیریت فناوری و مهندسی سیستم‌ها</h2>
+        <p data-key="hero_desc">
+          تمرکز من روی پیوند دادن مهندسی، داده‌ها و تصمیم‌گیری‌های کلان مدیریتی است. به تحلیل سیستم‌ها، توسعه اکوسیستم نوآوری و ایجاد ابزارهای شفاف برای پیشبرد اهداف استراتژیک علاقه‌مندم.
+        </p>
+        <div class="hero-actions">
+          <a href="#experience" class="btn btn-primary" data-key="btn_exp">مشاهده سوابق</a>
+          <a href="#contact" class="btn btn-secondary" data-key="btn_contact">تماس با من</a>
+        </div>
+      </div>
+      <div class="hero-avatar-wrapper">
+        <!-- برای عکس واقعی: <img src="profile.jpg" class="hero-avatar" alt="profile"> -->
+        <div style="font-size: 3.5rem; color: var(--text-muted);">👨‍💼</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section-alt">
+    <div class="container">
+      <h2 class="section-title" data-key="sec_exp_title">سوابق حرفه‌ای و دانشگاهی</h2>
+      <p class="section-subtitle" data-key="sec_exp_subtitle">مسیر تحصیلی و تجربیات کلیدی در توسعه پروژه‌ها</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-title" data-key="exp1_title">کارشناس حوزه نوآوری و فناوری</div>
+                <div class="timeline-company" data-key="exp1_org">معاونت علمی، فناوری و اقتصاد دانش‌بنیان</div>
+              </div>
+              <div class="timeline-date" data-key="exp1_date">۱۴۰۰ - اکنون</div>
+            </div>
+            <p class="timeline-desc" data-key="exp1_desc">
+              تحلیل و پایش شاخص‌های حمایتی، ارزیابی طرح‌ها و تحلیل داده‌های استانی، ساخت گزارش‌ها و اتوماسیون داده‌محور برای تسهیل تصمیم‌گیری‌های کلان سازمانی.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <div class="timeline-title" data-key="exp2_title">کارشناسی ارشد مدیریت تکنولوژی / هوافضا</div>
+                <div class="timeline-company" data-key="exp2_org">دانشگاه صنعتی</div>
+              </div>
+              <div class="timeline-date" data-key="exp2_date">تحصیلات تکمیلی</div>
+            </div>
+            <p class="timeline-desc" data-key="exp2_desc">
+              تمرکز بر مدیریت انتقال تکنولوژی، سیاست‌گذاری نوآوری، تلفیق نگرش ساختاریافته مهندسی با متدولوژی‌های مدرن مدیریتی.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title" data-key="sec_skills_title">مهارت‌ها و جعبه‌ابزار</h2>
+      <p class="section-subtitle" data-key="sec_skills_subtitle">تخصص‌های تحلیلی، فنی و مدیریتی</p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-category">📊 <span data-key="skill_cat1">تحلیل داده و ابزارهای گزارش‌گیری</span></div>
+          <div class="skill-tags">
+            <span class="skill-tag">Advanced Excel</span>
+            <span class="skill-tag">Excel VBA &amp; Automation</span>
+            <span class="skill-tag">Pivot Reporting</span>
+            <span class="skill-tag">Data Modeling</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-category">⚙️ <span data-key="skill_cat2">مهندسی و مدیریت نوآوری</span></div>
+          <div class="skill-tags">
+            <span class="skill-tag">Technology Management</span>
+            <span class="skill-tag">System Analysis</span>
+            <span class="skill-tag">Mechanical Engineering</span>
+            <span class="skill-tag">Aerospace Fundamentals</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-category">🌍 <span data-key="skill_cat3">زبان‌ها و ارتباطات</span></div>
+          <div class="skill-tags">
+            <span class="skill-tag">Persian (Native)</span>
+            <span class="skill-tag">English (Professional)</span>
+            <span class="skill-tag">Portuguese (Learning)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="beyond" class="section-alt">
+    <div class="container">
+      <h2 class="section-title" data-key="sec_beyond_title">فراتر از کار و علایق</h2>
+      <p class="section-subtitle" data-key="sec_beyond_subtitle">فعالیت‌های فوق‌برنامه، علایق شخصی و تجربیات جانبی</p>
+
+      <div class="beyond-grid">
+        <div class="beyond-card">
+          <div class="beyond-icon">📚</div>
+          <div class="beyond-title" data-key="beyond1_title">کتاب‌خوانی و تفکر سیستمی</div>
+          <p class="beyond-desc" data-key="beyond1_desc">علاقه‌مند به مطالعه در حوزه‌های توسعه فردی، تاریخ علم، مدیریت استراتژیک و الگوهای پیچیده انسانی.</p>
+        </div>
+
+        <div class="beyond-card">
+          <div class="beyond-icon">🌐</div>
+          <div class="beyond-title" data-key="beyond2_title">یادگیری زبان‌های بین‌المللی</div>
+          <p class="beyond-desc" data-key="beyond2_desc">کنجکاوی درباره فرهنگ‌ها و ارتباطات بین‌الملل، به‌ویژه تمرین و پیگیری زبان پرتغالی.</p>
+        </div>
+
+        <div class="beyond-card">
+          <div class="beyond-icon">🏃‍♂️</div>
+          <div class="beyond-title" data-key="beyond3_title">ورزش و سبک زندگی پویا</div>
+          <p class="beyond-desc" data-key="beyond3_desc">ورزش منظم برای حفظ تمرکز ذهنی، انعطاف‌پذیری و بازدهی بالا در چالش‌های کاری روزمره.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container footer-content">
+      <h3 style="font-size: 1.25rem; font-weight: 700;" data-key="footer_title">بیایید در ارتباط باشیم</h3>
+      <p style="color: var(--text-muted); max-width: 500px;" data-key="footer_desc">اگر علاقه‌مند به گفت‌وگو در حوزه نوآوری، پروژه‌های داده‌محور یا هم‌فکری حرفه‌ای هستید، خوشحال می‌شوم پیام دهید.</p>
+
+      <div class="social-links">
+        <a href="mailto:your-email@domain.ir" class="social-link">Email</a>
+        <a href="https://linkedin.com" target="_blank" class="social-link">LinkedIn</a>
+        <a href="https://github.com" target="_blank" class="social-link">GitHub</a>
+      </div>
+
+      <p style="color: var(--text-muted); font-size: .8rem; margin-top: 16px; opacity: .7;">
+        © 2026 Esi. All Rights Reserved. Built with clean code.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      fa: {
+        name: "اسی | پورتفولیو",
+        nav_about: "درباره من", nav_exp: "سوابق", nav_skills: "مهارت‌ها", nav_beyond: "فراتر از کار",
+        status: "آماده همکاری و توسعه پروژه‌ها",
+        hero_title: "سلام، من اسی هستم 👋",
+        hero_role: "متخصص مدیریت فناوری و مهندسی سیستم‌ها",
+        hero_desc: "تمرکز من روی پیوند دادن مهندسی، داده‌ها و تصمیم‌گیری‌های کلان مدیریتی است. به تحلیل سیستم‌ها، توسعه اکوسیستم نوآوری و ایجاد ابزارهای شفاف برای پیشبرد اهداف استراتژیک علاقه‌مندم.",
+        btn_exp: "مشاهده سوابق", btn_contact: "تماس با من",
+        sec_exp_title: "سوابق حرفه‌ای و دانشگاهی",
+        sec_exp_subtitle: "مسیر تحصیلی و تجربیات کلیدی در توسعه پروژه‌ها",
+        exp1_title: "کارشناس حوزه نوآوری و فناوری",
+        exp1_org: "معاونت علمی، فناوری و اقتصاد دانش‌بنیان",
+        exp1_date: "۱۴۰۰ - اکنون",
+        exp1_desc: "تحلیل و پایش شاخص‌های حمایتی، ارزیابی طرح‌ها و تحلیل داده‌های استانی، ساخت گزارش‌ها و اتوماسیون داده‌محور برای تسهیل تصمیم‌گیری‌های کلان سازمانی.",
+        exp2_title: "کارشناسی ارشد مدیریت تکنولوژی / هوافضا",
+        exp2_org: "دانشگاه صنعتی",
+        exp2_date: "تحصیلات تکمیلی",
+        exp2_desc: "تمرکز بر مدیریت انتقال تکنولوژی، سیاست‌گذاری نوآوری، تلفیق نگرش ساختاریافته مهندسی با متدولوژی‌های مدرن مدیریتی.",
+        sec_skills_title: "مهارت‌ها و جعبه‌ابزار",
+        sec_skills_subtitle: "تخصص‌های تحلیلی، فنی و مدیریتی",
+        skill_cat1: "تحلیل داده و ابزارهای گزارش‌گیری",
+        skill_cat2: "مهندسی و مدیریت نوآوری",
+        skill_cat3: "زبان‌ها و ارتباطات",
+        sec_beyond_title: "فراتر از کار و علایق",
+        sec_beyond_subtitle: "فعالیت‌های فوق‌برنامه، علایق شخصی و تجربیات جانبی",
+        beyond1_title: "کتاب‌خوانی و تفکر سیستمی",
+        beyond1_desc: "علاقه‌مند به مطالعه در حوزه‌های توسعه فردی، تاریخ علم، مدیریت استراتژیک و الگوهای پیچیده انسانی.",
+        beyond2_title: "یادگیری زبان‌های بین‌المللی",
+        beyond2_desc: "کنجکاوی درباره فرهنگ‌ها و ارتباطات بین‌الملل، به‌ویژه تمرین و پیگیری زبان پرتغالی.",
+        beyond3_title: "ورزش و سبک زندگی پویا",
+        beyond3_desc: "ورزش منظم برای حفظ تمرکز ذهنی، انعطاف‌پذیری و بازدهی بالا در چالش‌های کاری روزمره.",
+        footer_title: "بیایید در ارتباط باشیم",
+        footer_desc: "اگر علاقه‌مند به گفت‌وگو در حوزه نوآوری، پروژه‌های داده‌محور یا هم‌فکری حرفه‌ای هستید، خوشحال می‌شوم پیام دهید."
+      },
+      en: {
+        name: "Esi | Portfolio",
+        nav_about: "About", nav_exp: "Experience", nav_skills: "Skills", nav_beyond: "Beyond Work",
+        status: "Open to strategic collaborations",
+        hero_title: "Hi, I am Esi 👋",
+        hero_role: "Technology Management & Systems Engineering Specialist",
+        hero_desc: "Bridging engineering, data modeling, and strategic decision-making. Passionate about innovation ecosystems, analytical automation, and data-driven policy execution.",
+        btn_exp: "View Experience", btn_contact: "Get in Touch",
+        sec_exp_title: "Professional & Academic Path",
+        sec_exp_subtitle: "Milestones in engineering, innovation policy, and project management",
+        exp1_title: "Innovation & Technology Specialist",
+        exp1_org: "Vice-Presidency for Science & Tech",
+        exp1_date: "2021 - Present",
+        exp1_desc: "Monitoring strategic funds, provincial analytics, automated reporting, and supporting data-driven policymaking across high-impact tech initiatives.",
+        exp2_title: "MSc in Technology Management / Aerospace",
+        exp2_org: "Tech University",
+        exp2_date: "Postgraduate",
+        exp2_desc: "Focusing on technology transfer mechanisms, innovation policies, and combining structured engineering logic with modern executive methods.",
+        sec_skills_title: "Skills & Toolset",
+        sec_skills_subtitle: "Analytical, technical, and executive competencies",
+        skill_cat1: "Data Analytics & Reporting",
+        skill_cat2: "Engineering & Innovation Management",
+        skill_cat3: "Languages & Communication",
+        sec_beyond_title: "Beyond Work",
+        sec_beyond_subtitle: "Personal passions, lifelong learning, and extracurriculars",
+        beyond1_title: "Reading & Systems Thinking",
+        beyond1_desc: "Passionate about reading on personal development, history of science, strategic management, and complex human dynamics.",
+        beyond2_title: "Multilingual Pursuit",
+        beyond2_desc: "Curious about global cultures and language acquisition, currently exploring Portuguese.",
+        beyond3_title: "Active Lifestyle & Sports",
+        beyond3_desc: "Regular workouts and fitness to cultivate mental resilience, sharpness, and high-energy focus.",
+        footer_title: "Let's Connect",
+        footer_desc: "Feel free to reach out for conversations on innovation, data initiatives, or professional collaboration."
+      }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'fa';
+    let currentTheme = localStorage.getItem('theme') || 'light';
+
+    const body = document.getElementById('page-body');
+    const langBtn = document.getElementById('langToggle');
+    const langLabel = document.getElementById('langLabel');
+    const themeBtn = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+
+    function applyLang() {
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'fa' ? 'rtl' : 'ltr';
+      body.classList.toggle('lang-en', currentLang === 'en');
+      langLabel.textContent = currentLang === 'fa' ? 'English' : 'فارسی';
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const k = el.getAttribute('data-key');
+        if (translations[currentLang][k]) el.textContent = translations[currentLang][k];
+      });
+      localStorage.setItem('lang', currentLang);
+    }
+
+    function applyTheme() {
+      body.classList.toggle('theme-dark', currentTheme === 'dark');
+      themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', currentTheme);
+    }
+
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'fa' ? 'en' : 'fa';
+      applyLang();
+    });
+
+    themeBtn.addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      applyTheme();
+    });
+
+    applyLang();
+    applyTheme();
+  </script>
+</body>
+</html>
