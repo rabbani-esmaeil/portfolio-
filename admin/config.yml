@@ -7,84 +7,83 @@ media_folder: "/"
 public_folder: "/"
 
 collections:
-  - name: "portfolio_content"
+  - name: "content"
     label: "مدیریت محتوای پورتفولیو"
     files:
-      - name: "content_fa"
-        label: "ویرایش نسخه فارسی (FA)"
+      - name: "portfolio_fa"
+        label: "ویرایش اطلاعات رزومه (فارسی)"
         file: "content.json"
         format: "json"
         fields:
-          - label: "بخش معرفی (Hero)"
+          - label: "محتوای سایت"
             name: "fa"
             widget: "object"
             fields:
-              - { label: "نام", name: "header_name", widget: "string" }
-              - { label: "عنوان و سمت فعلی", name: "status", widget: "string" }
-              - { label: "تیتر شغلی", name: "hero_role", widget: "string" }
-              - { label: "خلاصه درباره من", name: "hero_desc", widget: "text" }
+              - { label: "نام و نام خانوادگی", name: "header_name", widget: "string" }
+              - { label: "عنوان شغلی اصلی", name: "hero_role", widget: "string" }
+              - { label: "سمت فعلی", name: "status", widget: "string" }
+              - { label: "متن معرفی و درباره من", name: "hero_desc", widget: "text" }
+              
+              - { label: "سابقه ۱ - عنوان سمت", name: "exp1_title", widget: "string" }
+              - { label: "سابقه ۱ - نام سازمان", name: "exp1_org", widget: "string" }
+              - { label: "سابقه ۱ - بازه زمانی", name: "exp1_date", widget: "string" }
+              - { label: "سابقه ۱ - شرح مسئولیت ۱", name: "exp1_b1", widget: "string" }
+              - { label: "سابقه ۱ - شرح مسئولیت ۲", name: "exp1_b2", widget: "string" }
+              - { label: "سابقه ۱ - شرح مسئولیت ۳", name: "exp1_b3", widget: "string" }
+              - { label: "سابقه ۱ - شرح مسئولیت ۴", name: "exp1_b4", widget: "string" }
 
-              - { label: "عنوان سابقه ۱", name: "exp1_title", widget: "string" }
-              - { label: "سازمان سابقه ۱", name: "exp1_org", widget: "string" }
-              - { label: "تاریخ سابقه ۱", name: "exp1_date", widget: "string" }
-              - { label: "مورد ۱ سابقه ۱", name: "exp1_b1", widget: "string" }
-              - { label: "مورد ۲ سابقه ۱", name: "exp1_b2", widget: "string" }
-              - { label: "مورد ۳ سابقه ۱", name: "exp1_b3", widget: "string" }
-              - { label: "مورد ۴ سابقه ۱", name: "exp1_b4", widget: "string" }
+              - { label: "سابقه ۲ - عنوان سمت", name: "exp2_title", widget: "string" }
+              - { label: "سابقه ۲ - نام سازمان", name: "exp2_org", widget: "string" }
+              - { label: "سابقه ۲ - بازه زمانی", name: "exp2_date", widget: "string" }
+              - { label: "سابقه ۲ - شرح مسئولیت ۱", name: "exp2_b1", widget: "string" }
+              - { label: "سابقه ۲ - شرح مسئولیت ۲", name: "exp2_b2", widget: "string" }
+              - { label: "سابقه ۲ - شرح مسئولیت ۳", name: "exp2_b3", widget: "string" }
+              - { label: "سابقه ۲ - شرح مسئولیت ۴", name: "exp2_b4", widget: "string" }
 
-              - { label: "عنوان سابقه ۲", name: "exp2_title", widget: "string" }
-              - { label: "سازمان سابقه ۲", name: "exp2_org", widget: "string" }
-              - { label: "تاریخ سابقه ۲", name: "exp2_date", widget: "string" }
-              - { label: "مورد ۱ سابقه ۲", name: "exp2_b1", widget: "string" }
-              - { label: "مورد ۲ سابقه ۲", name: "exp2_b2", widget: "string" }
-              - { label: "مورد ۳ سابقه ۲", name: "exp2_b3", widget: "string" }
-              - { label: "مورد ۴ سابقه ۲", name: "exp2_b4", widget: "string" }
+              - { label: "سابقه ۳ - عنوان سمت", name: "exp3_title", widget: "string" }
+              - { label: "سابقه ۳ - نام سازمان", name: "exp3_org", widget: "string" }
+              - { label: "سابقه ۳ - بازه زمانی", name: "exp3_date", widget: "string" }
+              - { label: "سابقه ۳ - شرح مسئولیت ۱", name: "exp3_b1", widget: "string" }
+              - { label: "سابقه ۳ - شرح مسئولیت ۲", name: "exp3_b2", widget: "string" }
+              - { label: "سابقه ۳ - شرح مسئولیت ۳", name: "exp3_b3", widget: "string" }
+              - { label: "سابقه ۳ - شرح مسئولیت ۴", name: "exp3_b4", widget: "string" }
 
-              - { label: "عنوان سابقه ۳", name: "exp3_title", widget: "string" }
-              - { label: "سازمان سابقه ۳", name: "exp3_org", widget: "string" }
-              - { label: "تاریخ سابقه ۳", name: "exp3_date", widget: "string" }
-              - { label: "مورد ۱ سابقه ۳", name: "exp3_b1", widget: "string" }
-              - { label: "مورد ۲ سابقه ۳", name: "exp3_b2", widget: "string" }
-              - { label: "مورد ۳ سابقه ۳", name: "exp3_b3", widget: "string" }
-              - { label: "مورد ۴ سابقه ۳", name: "exp3_b4", widget: "string" }
+              - { label: "سابقه ۴ - عنوان سمت", name: "exp4_title", widget: "string" }
+              - { label: "سابقه ۴ - نام سازمان", name: "exp4_org", widget: "string" }
+              - { label: "سابقه ۴ - بازه زمانی", name: "exp4_date", widget: "string" }
+              - { label: "سابقه ۴ - شرح مسئولیت ۱", name: "exp4_b1", widget: "string" }
+              - { label: "سابقه ۴ - شرح مسئولیت ۲", name: "exp4_b2", widget: "string" }
+              - { label: "سابقه ۴ - شرح مسئولیت ۳", name: "exp4_b3", widget: "string" }
+              - { label: "سابقه ۴ - شرح مسئولیت ۴", name: "exp4_b4", widget: "string" }
 
-              - { label: "عنوان سابقه ۴", name: "exp4_title", widget: "string" }
-              - { label: "سازمان سابقه ۴", name: "exp4_org", widget: "string" }
-              - { label: "تاریخ سابقه ۴", name: "exp4_date", widget: "string" }
+              - { label: "سابقه ۵ - عنوان سمت", name: "exp5_title", widget: "string" }
+              - { label: "سابقه ۵ - نام سازمان", name: "exp5_org", widget: "string" }
+              - { label: "سابقه ۵ - بازه زمانی", name: "exp5_date", widget: "string" }
+              - { label: "سابقه ۵ - شرح مسئولیت ۱", name: "exp5_b1", widget: "string" }
+              - { label: "سابقه ۵ - شرح مسئولیت ۲", name: "exp5_b2", widget: "string" }
+              - { label: "سابقه ۵ - شرح مسئولیت ۳", name: "exp5_b3", widget: "string" }
+              - { label: "سابقه ۵ - شرح مسئولیت ۴", name: "exp5_b4", widget: "string" }
+              - { label: "سابقه ۵ - شرح مسئولیت ۵", name: "exp5_b5", widget: "string" }
 
-              - { label: "عنوان سابقه ۵", name: "exp5_title", widget: "string" }
-              - { label: "سازمان سابقه ۵", name: "exp5_org", widget: "string" }
-              - { label: "تاریخ سابقه ۵", name: "exp5_date", widget: "string" }
+              - { label: "سابقه ۶ - عنوان سمت", name: "exp6_title", widget: "string" }
+              - { label: "سابقه ۶ - نام سازمان", name: "exp6_org", widget: "string" }
+              - { label: "سابقه ۶ - بازه زمانی", name: "exp6_date", widget: "string" }
+              - { label: "سابقه ۶ - شرح مسئولیت ۱", name: "exp6_b1", widget: "string" }
+              - { label: "سابقه ۶ - شرح مسئولیت ۲", name: "exp6_b2", widget: "string" }
+              - { label: "سابقه ۶ - شرح مسئولیت ۳", name: "exp6_b3", widget: "string" }
+              - { label: "سابقه ۶ - شرح مسئولیت ۴", name: "exp6_b4", widget: "string" }
 
-              - { label: "عنوان سابقه ۶", name: "exp6_title", widget: "string" }
-              - { label: "سازمان سابقه ۶", name: "exp6_org", widget: "string" }
-              - { label: "تاریخ سابقه ۶", name: "exp6_date", widget: "string" }
+              - { label: "تحصیلات ۱ - مقطع و رشته", name: "edu1_degree", widget: "string" }
+              - { label: "تحصیلات ۱ - دانشگاه و سال", name: "edu1_uni", widget: "string" }
+              - { label: "تحصیلات ۱ - توضیحات", name: "edu1_desc", widget: "text" }
 
-              - { label: "تحصیلات ۱ (مقطع)", name: "edu1_degree", widget: "string" }
-              - { label: "تحصیلات ۱ (دانشگاه)", name: "edu1_uni", widget: "string" }
-              - { label: "تحصیلات ۱ (توضیحات)", name: "edu1_desc", widget: "text" }
+              - { label: "تحصیلات ۲ - مقطع و رشته", name: "edu2_degree", widget: "string" }
+              - { label: "تحصیلات ۲ - دانشگاه و سال", name: "edu2_uni", widget: "string" }
+              - { label: "تحصیلات ۲ - توضیحات", name: "edu2_desc", widget: "text" }
 
-              - { label: "تحصیلات ۲ (مقطع)", name: "edu2_degree", widget: "string" }
-              - { label: "تحصیلات ۲ (دانشگاه)", name: "edu2_uni", widget: "string" }
-              - { label: "تحصیلات ۲ (توضیحات)", name: "edu2_desc", widget: "text" }
-
-              - { label: "فوق برنامه ۱", name: "extra1_title", widget: "string" }
-              - { label: "توضیح فوق برنامه ۱", name: "extra1_desc", widget: "text" }
-              - { label: "فوق برنامه ۲", name: "extra2_title", widget: "string" }
-              - { label: "توضیح فوق برنامه ۲", name: "extra2_desc", widget: "text" }
-              - { label: "فوق برنامه ۳", name: "extra3_title", widget: "string" }
-              - { label: "توضیح فوق برنامه ۳", name: "extra3_desc", widget: "text" }
-
-      - name: "content_en"
-        label: "ویرایش نسخه انگلیسی (EN)"
-        file: "content.json"
-        format: "json"
-        fields:
-          - label: "بخش انگلیسی"
-            name: "en"
-            widget: "object"
-            fields:
-              - { label: "Name", name: "header_name", widget: "string" }
-              - { label: "Status", name: "status", widget: "string" }
-              - { label: "Hero Role", name: "hero_role", widget: "string" }
-              - { label: "Hero Desc", name: "hero_desc", widget: "text" }
+              - { label: "فوق‌برنامه ۱ - عنوان", name: "extra1_title", widget: "string" }
+              - { label: "فوق‌برنامه ۱ - توضیحات", name: "extra1_desc", widget: "text" }
+              - { label: "فوق‌برنامه ۲ - عنوان", name: "extra2_title", widget: "string" }
+              - { label: "فوق‌برنامه ۲ - توضیحات", name: "extra2_desc", widget: "text" }
+              - { label: "فوق‌برنامه ۳ - عنوان", name: "extra3_title", widget: "string" }
+              - { label: "فوق‌برنامه ۳ - توضیحات", name: "extra3_desc", widget: "text" }
