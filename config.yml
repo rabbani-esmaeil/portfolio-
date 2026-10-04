@@ -1,7 +1,7 @@
 # Sveltia CMS Configuration
 backend:
   name: github
-  repo: your-username/your-repo-name # Replace with your GitHub repository (e.g. username/rabbani-portfolio)
+  repo: rabbani-esmaeil/portfolio- # Replace with your GitHub repository (e.g. username/rabbani-portfolio)
   branch: main # or master
   site_domain: localhost
 
