@@ -1,0 +1,110 @@
+# Sveltia CMS Configuration
+backend:
+  name: github
+  repo: your-username/your-repo-name # Replace with your GitHub repository (e.g. username/rabbani-portfolio)
+  branch: main # or master
+  site_domain: localhost
+
+# Media folder configuration
+media_folder: "assets"
+public_folder: "assets"
+
+# Site locale & display
+locale: "fa"
+
+collections:
+  - name: "content_fa"
+    label: "محتوای فارسی (Persian Content)"
+    files:
+      - file: "data/content.json"
+        name: "persian_data"
+        label: "ویرایش متن‌های وب‌سایت فارسی"
+        fields:
+          - label: "محتوای زبان فارسی"
+            name: "fa"
+            widget: "object"
+            fields:
+              - { label: "نام در هدر", name: "header_name", widget: "string" }
+              - { label: "عنوان وضعیت کنونی", name: "status", widget: "string" }
+              - { label: "نام بزرگ (Hero)", name: "hero_title", widget: "string" }
+              - { label: "عنوان شغلی و تخصص", name: "hero_role", widget: "string" }
+              - { label: "خلاصه بیوگرافی (Hero)", name: "hero_desc", widget: "text" }
+              - { label: "درباره من - عنوان", name: "about_title", widget: "string" }
+              - { label: "درباره من - متن کامل", name: "about_text", widget: "text" }
+              - { label: "آمار ۱ - عنوان", name: "stat1_label", widget: "string" }
+              - { label: "آمار ۲ - عنوان", name: "stat2_label", widget: "string" }
+              - { label: "آمار ۳ - عنوان", name: "stat3_label", widget: "string" }
+              - { label: "آمار ۴ - عنوان", name: "stat4_label", widget: "string" }
+              
+              - { label: "شغل ۱ - عنوان", name: "exp1_title", widget: "string" }
+              - { label: "شغل ۱ - سازمان", name: "exp1_org", widget: "string" }
+              - { label: "شغل ۱ - تاریخ", name: "exp1_date", widget: "string" }
+              - { label: "شغل ۱ - شرح", name: "exp1_desc", widget: "text" }
+
+              - { label: "شغل ۲ - عنوان", name: "exp2_title", widget: "string" }
+              - { label: "شغل ۲ - سازمان", name: "exp2_org", widget: "string" }
+              - { label: "شغل ۲ - تاریخ", name: "exp2_date", widget: "string" }
+              - { label: "شغل ۲ - شرح", name: "exp2_desc", widget: "text" }
+
+              - { label: "شغل ۳ - عنوان", name: "exp3_title", widget: "string" }
+              - { label: "شغل ۳ - سازمان", name: "exp3_org", widget: "string" }
+              - { label: "شغل ۳ - تاریخ", name: "exp3_date", widget: "string" }
+              - { label: "شغل ۳ - شرح", name: "exp3_desc", widget: "text" }
+
+              - { label: "شغل ۴ - عنوان", name: "exp4_title", widget: "string" }
+              - { label: "شغل ۴ - سازمان", name: "exp4_org", widget: "string" }
+              - { label: "شغل ۴ - تاریخ", name: "exp4_date", widget: "string" }
+              - { label: "شغل ۴ - شرح", name: "exp4_desc", widget: "text" }
+
+              - { label: "شغل ۵ - عنوان", name: "exp5_title", widget: "string" }
+              - { label: "شغل ۵ - سازمان", name: "exp5_org", widget: "string" }
+              - { label: "شغل ۵ - تاریخ", name: "exp5_date", widget: "string" }
+              - { label: "شغل ۵ - شرح", name: "exp5_desc", widget: "text" }
+
+              - { label: "تحصیلات ۱ - مقطع و رشته", name: "edu1_title", widget: "string" }
+              - { label: "تحصیلات ۱ - دانشگاه", name: "edu1_inst", widget: "string" }
+              - { label: "تحصیلات ۱ - توضیحات و معدل", name: "edu1_desc", widget: "text" }
+
+              - { label: "تحصیلات ۲ - مقطع و رشته", name: "edu2_title", widget: "string" }
+              - { label: "تحصیلات ۲ - دانشگاه", name: "edu2_inst", widget: "string" }
+              - { label: "تحصیلات ۲ - توضیحات و رتبه", name: "edu2_desc", widget: "text" }
+
+              - { label: "ایمیل تماس", name: "contact_email", widget: "string" }
+              - { label: "موقعیت مکانی", name: "contact_loc", widget: "string" }
+
+  - name: "content_en"
+    label: "محتوای انگلیسی (English Content)"
+    files:
+      - file: "data/content.json"
+        name: "english_data"
+        label: "Edit English Website Texts"
+        fields:
+          - label: "English Content"
+            name: "en"
+            widget: "object"
+            fields:
+              - { label: "Header Name", name: "header_name", widget: "string" }
+              - { label: "Current Status", name: "status", widget: "string" }
+              - { label: "Hero Title", name: "hero_title", widget: "string" }
+              - { label: "Hero Role / Tagline", name: "hero_role", widget: "string" }
+              - { label: "Hero Bio", name: "hero_desc", widget: "text" }
+              - { label: "About Title", name: "about_title", widget: "string" }
+              - { label: "About Text", name: "about_text", widget: "text" }
+              - { label: "Stat 1 Label", name: "stat1_label", widget: "string" }
+              - { label: "Stat 2 Label", name: "stat2_label", widget: "string" }
+              - { label: "Stat 3 Label", name: "stat3_label", widget: "string" }
+              - { label: "Stat 4 Label", name: "stat4_label", widget: "string" }
+              - { label: "Exp 1 Title", name: "exp1_title", widget: "string" }
+              - { label: "Exp 1 Org", name: "exp1_org", widget: "string" }
+              - { label: "Exp 1 Date", name: "exp1_date", widget: "string" }
+              - { label: "Exp 1 Desc", name: "exp1_desc", widget: "text" }
+              - { label: "Exp 2 Title", name: "exp2_title", widget: "string" }
+              - { label: "Exp 2 Org", name: "exp2_org", widget: "string" }
+              - { label: "Exp 2 Date", name: "exp2_date", widget: "string" }
+              - { label: "Exp 2 Desc", name: "exp2_desc", widget: "text" }
+              - { label: "Exp 3 Title", name: "exp3_title", widget: "string" }
+              - { label: "Exp 3 Org", name: "exp3_org", widget: "string" }
+              - { label: "Exp 3 Date", name: "exp3_date", widget: "string" }
+              - { label: "Exp 3 Desc", name: "exp3_desc", widget: "text" }
+              - { label: "Contact Email", name: "contact_email", widget: "string" }
+              - { label: "Contact Location", name: "contact_loc", widget: "string" }
