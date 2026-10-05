@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سید اسماعیل ربانی | رزومه و پورتفولیو حرفه‌ای</title>
+    <meta name="description" content="پورتفولیو حرفه‌ای سید اسماعیل ربانی - کارشناس ارشد مهندسی هوافضا و مدیر پروژه‌های فناوری">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: rgba(30, 41, 59, 0.7);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --badge-bg: rgba(56, 189, 248, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(30, 58, 138, 0.15) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 40px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            backdrop-filter: blur(12px);
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
+        }
+
+        .avatar-wrap {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .avatar {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 25px var(--accent-glow);
+            filter: grayscale(15%);
+            transition: all 0.3s ease;
+        }
+
+        .avatar:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        .hero-content h1 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .hero-role {
+            font-size: 1.15rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            background: var(--badge-bg);
+            color: var(--accent);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #22c55e;
+        }
+
+        .hero-desc {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            text-align: justify;
+        }
+
+        /* Section Layout */
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .section-title i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .exp-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(8px);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(56, 189, 248, 0.3);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .exp-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .exp-org {
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3px 10px;
+            border-radius: 6px;
+        }
+
+        .exp-bullets {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .exp-bullets li {
+            position: relative;
+            padding-right: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .exp-bullets li::before {
+            content: "•";
+            position: absolute;
+            right: 4px;
+            color: var(--accent);
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        /* Two Column Grid for Education & Extras */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 
