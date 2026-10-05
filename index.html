@@ -4,453 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سید اسماعیل ربانی | رزومه و پورتفولیو حرفه‌ای</title>
-    <meta name="description" content="پورتفولیو حرفه‌ای سید اسماعیل ربانی - کارشناس ارشد مهندسی هوافضا و مدیر پروژه‌های فناوری">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: rgba(30, 41, 59, 0.7);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.15);
-            --badge-bg: rgba(56, 189, 248, 0.1);
-        }
+        :root { --bg-primary: #0f172a; --bg-card: rgba(30, 41, 59, 0.7); --border-color: rgba(255, 255, 255, 0.08); --text-main: #f8fafc; --text-muted: #94a3b8; --accent: #38bdf8; --accent-glow: rgba(56, 189, 248, 0.15); }
+        body { background-color: var(--bg-primary); color: var(--text-main); font-family: 'Vazirmatn', sans-serif; margin: 0; padding: 0; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Hero */
+        .hero { background: var(--bg-card); padding: 40px; border-radius: 20px; border: 1px solid var(--border-color); margin-bottom: 40px; text-align: center; }
+        .avatar { width: 150px; height: 150px; border-radius: 50%; border: 3px solid var(--accent); margin-bottom: 20px; }
+        h1 { margin-bottom: 10px; }
+        .hero-role { color: var(--accent); font-weight: 600; margin-bottom: 15px; }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            line-height: 1.8;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(30, 58, 138, 0.15) 0px, transparent 50%);
-            background-attachment: fixed;
-        }
-
-        .container {
-            max-width: 1040px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            padding: 40px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            backdrop-filter: blur(12px);
-            margin-bottom: 40px;
-            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
-        }
-
-        .avatar-wrap {
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .avatar {
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center top;
-            border: 3px solid var(--accent);
-            box-shadow: 0 0 25px var(--accent-glow);
-            filter: grayscale(15%);
-            transition: all 0.3s ease;
-        }
-
-        .avatar:hover {
-            filter: grayscale(0%);
-            transform: scale(1.02);
-        }
-
-        .hero-content h1 {
-            font-size: 2.1rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 6px;
-        }
-
-        .hero-role {
-            font-size: 1.15rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .badge-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 12px;
-            background: var(--badge-bg);
-            color: var(--accent);
-            border-radius: 999px;
-            font-size: 0.85rem;
-            margin-bottom: 16px;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-
-        .badge-dot {
-            width: 8px;
-            height: 8px;
-            background: #22c55e;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #22c55e;
-        }
-
-        .hero-desc {
-            color: var(--text-muted);
-            font-size: 0.98rem;
-            text-align: justify;
-        }
-
-        /* Section Layout */
-        .section-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 12px;
-        }
-
-        .section-title i {
-            color: var(--accent);
-            font-size: 1.2rem;
-        }
-
-        /* Experience Timeline */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .exp-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
-            backdrop-filter: blur(8px);
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .exp-card:hover {
-            transform: translateY(-2px);
-            border-color: rgba(56, 189, 248, 0.3);
-        }
-
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        .exp-title {
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .exp-org {
-            color: var(--accent);
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .exp-date {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.05);
-            padding: 3px 10px;
-            border-radius: 6px;
-        }
-
-        .exp-bullets {
-            list-style: none;
-            padding: 0;
-            margin-top: 10px;
-        }
-
-        .exp-bullets li {
-            position: relative;
-            padding-right: 20px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-            line-height: 1.7;
-            text-align: justify;
-        }
-
-        .exp-bullets li::before {
-            content: "•";
-            position: absolute;
-            right: 4px;
-            color: var(--accent);
-            font-size: 1.2rem;
-            line-height: 1.5;
-        }
-
-        /* Two Column Grid */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 40px;
-        }
-
-        .info-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
-            backdrop-filter: blur(8px);
-        }
-
-        .info-item {
-            margin-bottom: 20px;
-        }
-
-        .info-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .info-item h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .info-item .sub {
-            color: var(--accent);
-            font-size: 0.9rem;
-            margin-bottom: 6px;
-        }
-
-        .info-item p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 20px;
-            }
-            .hero-role {
-                justify-content: center;
-            }
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            .exp-header {
-                flex-direction: column;
-            }
-        }
+        /* Timeline */
+        .section-title { font-size: 1.4rem; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; }
+        .exp-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+        .exp-title { font-weight: 700; color: var(--text-main); }
+        .exp-org { color: var(--accent); font-size: 0.9rem; margin: 5px 0 10px 0; }
+        .exp-date { font-size: 0.8rem; color: var(--text-muted); background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
+        ul { padding-right: 20px; color: var(--text-muted); font-size: 0.9rem; }
+        li { margin-bottom: 5px; }
     </style>
 </head>
 <body>
-
     <div class="container">
-        
-        <!-- Hero Section -->
         <header class="hero">
-            <div class="avatar-wrap">
-                <img src="profile.jpg" alt="سید اسماعیل ربانی" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=Esmaeil+Rabbani&size=200&background=0f172a&color=38bdf8'">
-            </div>
-            <div class="hero-content">
-                <div class="badge-status">
-                    <span class="badge-dot"></span>
-                    <span>معاونت علمی، فناوری و اقتصاد دانش‌بنیان ریاست جمهوری</span>
-                </div>
-                <h1>سید اسماعیل ربانی</h1>
-                <div class="hero-role">
-                    <i class="fa-solid fa-briefcase"></i>
-                    <span>کارشناس ارشد مهندسی هوافضا | راهبری فناوری و برنامه‌ریزی راهبردی</span>
-                </div>
-                <p class="hero-desc">
-                    متخصص در حوزه پایش، برنامه‌ریزی و ارزیابی پروژه‌های فناورانه و دانش‌بنیان کشور با سابقه تدوین برنامه‌های کلان ملی، مدیریت تسهیلات و حمایت‌های حمایتی-توسعه‌ای، تحلیل کلان داده‌های بودجه‌ای و هماهنگی نهادهای بالادستی علم و فناوری.
-                </p>
-            </div>
+            <img src="profile.jpg" alt="سید اسماعیل ربانی" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=Esmaeil+Rabbani&size=200&background=0f172a&color=38bdf8'">
+            <h1>سید اسماعیل ربانی</h1>
+            <p class="hero-role">کارشناس ارشد مهندسی هوافضا | مدیر راهبردی فناوری</p>
         </header>
 
-        <!-- Experience Section -->
         <section>
-            <h2 class="section-title">
-                <i class="fa-solid fa-business-time"></i>
-                سوابق شغلی و اجرایی
-            </h2>
+            <h2 class="section-title"><i class="fa-solid fa-business-time"></i> سوابق حرفه‌ای</h2>
+            
+            <div class="exp-card">
+                <div class="exp-title">مسئول بررسی و پیگیری‌های ویژه حوزه ریاست</div>
+                <div class="exp-org">معاونت علمی، فناوری و اقتصاد دانش‌بنیان ریاست‌جمهوری</div>
+                <div class="exp-date">بهمن ۱۴۰۴ - اکنون</div>
+                <ul>
+                    <li>پیگیری مصوبات سفرهای استانی معاون علمی رئیس‌جمهور</li>
+                    <li>پیگیری مصوبات شورای مدیران معاونت علمی</li>
+                    <li>پیگیری و تسریع گردش مکاتبات ریاست‌جمهوری و معاون اول در بدنه معاونت</li>
+                    <li>پیگیری دستورات خاص معاون علمی و مدیرکل حوزه ریاست</li>
+                </ul>
+            </div>
 
-            <div class="timeline">
+            <div class="exp-card">
+                <div class="exp-title">معاون اجرایی حوزه ریاست و روابط عمومی</div>
+                <div class="exp-org">سازمان هواپیمایی کشوری</div>
+                <div class="exp-date">آذر ۱۴۰۳ - بهمن ۱۴۰۴</div>
+                <ul>
+                    <li>دبیری جلسات شورای معاونین و مدیران سازمان</li>
+                    <li>مدیریت مکاتبات ریاست سازمان و تفویض اختیار صدور دستور</li>
+                    <li>عضویت در شورای راهبری سازمان (تدوین راهبردها و برنامه‌ها)</li>
+                    <li>عضویت در کمیته حمل و نقل هوایی کوچک</li>
+                </ul>
+            </div>
 
-                <!-- 1 -->
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">کارشناس تخصصی دفتر هماهنگی و راهبری حوزه تحول، توسعه زیرساخت و فناوری‌های نوین</div>
-                            <div class="exp-org">معاونت علمی، فناوری و اقتصاد دانش‌بنیان ریاست جمهوری</div>
-                        </div>
-                        <div class="exp-date">۱۴۰۳ - اکنون</div>
-                    </div>
-                    <ul class="exp-bullets">
-                        <li>برنامه‌ریزی، پیگیری و پایش تکالیف و مصوبات راهبردی معاونت در حوزه‌های توسعه زیرساخت و فناوری‌های تحول‌آفرین</li>
-                        <li>پایش مستمر و تهیه گزارش‌های ارزیابی عملکرد برنامه‌ها، مصوبات و اعتبارات تخصیص‌یافته به طرح‌های کلان</li>
-                        <li>تحلیل داده‌های آماری و تدوین داشبوردهای مدیریتی جهت تسهیل تصمیم‌گیری‌های ارشد حوزه علم و فناوری</li>
-                        <li>همکاری در تنظیم پیش‌نویس توافق‌نامه‌ها، آیین‌نامه‌ها و دستورالعمل‌های اجرایی مشترک با دستگاه‌های اجرایی</li>
-                    </ul>
-                </div>
+            <div class="exp-card">
+                <div class="exp-title">رئیس هیئت‌مدیره و نماینده معاونت علمی در هیئت‌مدیره</div>
+                <div class="exp-org">صندوق پژوهش و فناوری توسعه فناوری‌های راهبردی</div>
+                <div class="exp-date">اردیبهشت ۱۴۰۳ - شهریور ۱۴۰۴</div>
+                <ul>
+                    <li>هدایت و راهبری جلسات هیأت‌مدیره و نظارت بر اجرای مصوبات</li>
+                    <li>نظارت راهبردی بر تحقق اهداف حمایتی از نوآوری و فناوری</li>
+                    <li>نمایندگی منافع و سیاست‌های معاونت علمی در تصمیم‌گیری‌های کلان</li>
+                    <li>نظارت بر شفافیت مالی و تعامل با ذی‌نفعان کلیدی</li>
+                </ul>
+            </div>
 
-                <!-- 2 -->
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">مسئول هماهنگی دبیرخانه تدوین برنامه‌های هفتم توسعه و بودجه‌های سالانه</div>
-                            <div class="exp-org">معاونت علمی، فناوری و اقتصاد دانش‌بنیان ریاست جمهوری</div>
-                        </div>
-                        <div class="exp-date">۱۴۰۱ - ۱۴۰۳</div>
-                    </div>
-                    <ul class="exp-bullets">
-                        <li>مشارکت مستقیم در تدوین احکام، تبصره‌ها و برنامه‌های عملیاتی قانون برنامه هفتم پیشرفت کشور در بخش اقتصاد دانش‌بنیان</li>
-                        <li>تهیه، تجمیع و دفاع از لوایح و پیوست‌های بودجه سالانه معاونت و ستادهای توسعه فناوری وابسته</li>
-                        <li>ارزیابی انطباق مصوبات بودجه‌ای با اسناد بالادستی، سیاست‌های ابلاغی و اولویت‌های راهبردی نقشه جامع علمی کشور</li>
-                        <li>ارتباط مداوم با کارشناسان و مدیران سازمان برنامه و بودجه کشور، هیئت وزیران و کمیسیون‌های مجلس شورای اسلامی</li>
-                    </ul>
-                </div>
+            <div class="exp-card">
+                <div class="exp-title">کارشناس ارشد حوزه ریاست</div>
+                <div class="exp-org">معاونت علمی، فناوری و اقتصاد دانش‌بنیان</div>
+                <div class="exp-date">آذر ۱۴۰۱ - آبان ۱۴۰۳</div>
+                <ul>
+                    <li>مدیریت مکاتبات معاون رئیس‌جمهور و تفویض اختیار</li>
+                    <li>جانشین معاون در سامانه مدیریت حمایت‌های مالی</li>
+                    <li>برنامه‌ریزی سفرهای استانی و ارزیابی طرح‌های توسعه‌ای</li>
+                    <li>عضویت در کمیته مشترک با صندوق نوآوری و شکوفایی</li>
+                </ul>
+            </div>
 
-                <!-- 3 -->
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">کارشناس ارشد ارزیابی طرح‌ها و اعطای تسهیلات دانش‌بنیان</div>
-                            <div class="exp-org">صندوق‌های پژوهش و فناوری / نهادهای همکار معاونت علمی</div>
-                        </div>
-                        <div class="exp-date">۱۳۹۹ - ۱۴۰۱</div>
-                    </div>
-                    <ul class="exp-bullets">
-                        <li>بررسی و امکان‌سنجی فنی، مالی و اعتباری طرح‌های متقاضی تسهیلات و حمایت‌های تجاری‌سازی</li>
-                        <li>نظارت بر فرآیند تخصیص و پایش مرحله‌ای حسن هزینه‌کرد منابع مالی، تسهیلات وجوه اداره‌شده و تبصره‌های قانونی</li>
-                        <li>طراحی و استقرار الگوهای اعتبارسنجی و رتبه‌بندی استانی و موضوعی شرکت‌های فناور متقاضی</li>
-                        <li>ارائه بازخوردهای تخصصی جهت هدایت طرح‌های نوپا به سمت زنجیره ارزش صنایع بزرگ</li>
-                    </ul>
-                </div>
+            <div class="exp-card">
+                <div class="exp-title">مسئول امور شرکت‌های دانش‌بنیان و نظارت بر طرح‌ها</div>
+                <div class="exp-org">ستاد توسعه فناوری‌های آب، خشکسالی و محیط‌زیست</div>
+                <div class="exp-date">فروردین ۱۳۹۸ - آبان ۱۴۰۱</div>
+                <ul>
+                    <li>مدیریت اجرایی رویداد سالانه ستاد با حضور ۱۰۰ شرکت دانش‌بنیان</li>
+                    <li>کارشناس مسئول مگاپروژه «چشمه» (آب‌های خلیج فارس)</li>
+                    <li>کارشناس مدیریت دانش مگاپروژه «آب ژرف»</li>
+                    <li>شناسایی و شبکه‌سازی میان شرکت‌های دانش‌بنیان حوزه آب</li>
+                </ul>
+            </div>
 
-                <!-- 4 -->
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-title">پژوهشگر ارشد تحلیل سامانه‌ها و دینامیک پرواز</div>
-                            <div class="exp-org">مراکز تحقیقاتی و دانشگاهی حوزه هوافضا</div>
-                        </div>
-                        <div class="exp-date">۱۳۹۶ - ۱۳۹۹</div>
-                    </div>
-                    <ul class="exp-bullets">
-                        <li>تحلیل، شبیه‌سازی عددی و مدلسازی رفتار دینامیکی سامانه‌های هوایی و فضایی با نرم‌افزارهای تخصصی</li>
-                        <li>طراحی الگوریتم‌های هدایت، ناوبری و کنترل برای سامانه‌های پیچیده با قابلیت اطمینان بالا</li>
-                        <li>مشارکت در تدوین مستندات فنی، گزارش‌های مهندسی و تحلیل ریسک سیستم‌های مکانیکی و هوانوردی</li>
-                    </ul>
-                </div>
-
+            <div class="exp-card">
+                <div class="exp-title">مدیر بخش ترویج و فرهنگ‌سازی</div>
+                <div class="exp-org">ستاد توسعه فناوری و صنایع هوایی و هوانوردی</div>
+                <div class="exp-date">اسفند ۱۳۹۴ - اسفند ۱۳۹۷</div>
+                <ul>
+                    <li>مدیر پروژه تجهیز پژوهش‌سراهای دانش‌آموزی هوافضا</li>
+                    <li>مدیر پروژه جشنواره ایده‌بازار هوایی و هوانوردی</li>
+                    <li>نظارت و داوری طرح‌های پژوهشی پهپادی</li>
+                    <li>مدیریت ارزیابی اختراعات حوزه هوایی</li>
+                </ul>
             </div>
         </section>
-
-        <!-- Education & Skills -->
-        <div class="grid-2">
-            
-            <!-- Education -->
-            <section class="info-card">
-                <h2 class="section-title">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    سوابق تحصیلی
-                </h2>
-
-                <div class="info-item">
-                    <h3>کارشناسی ارشد مهندسی هوافضا</h3>
-                    <div class="sub">دانشگاه تهران | گرایش دینامیک پرواز و کنترل</div>
-                    <p>پژوهش در زمینه مدلسازی پیشرفته و بهینه‌سازی مسیر سامانه‌ها با استفاده از روش‌های هوشمند و داده‌محور.</p>
-                </div>
-
-                <div class="info-item">
-                    <h3>کارشناسی مهندسی مکانیک</h3>
-                    <div class="sub">دانشگاه شیراز | طراحی جامدات و حرارت-سیالات</div>
-                    <p>فارغ‌التحصیل با رتبه ممتاز و گذراندن پروژه‌های تخصصی تحلیل المان محدود و طراحی مکانیزم‌های کاربردی.</p>
-                </div>
-            </section>
-
-            <!-- Skills & Languages -->
-            <section class="info-card">
-                <h2 class="section-title">
-                    <i class="fa-solid fa-gears"></i>
-                    تخصص‌ها و مهارت‌ها
-                </h2>
-
-                <div class="info-item">
-                    <h3>تحلیل و ارزیابی سیاست‌های علم و فناوری</h3>
-                    <p>مدیریت و پایش برنامه‌های راهبردی، قوانین بودجه، احکام توسعه‌ای و شاخص‌های اقتصاد دانش‌بنیان.</p>
-                </div>
-
-                <div class="info-item">
-                    <h3>تحلیل پیشرفته داده و گزارش‌گیری اجرایی</h3>
-                    <p>طراحی داشبوردهای پایش، تسلط به اکسل پیشرفته، Excel VBA، مدل‌سازی داده و Pivot Reporting.</p>
-                </div>
-
-                <div class="info-item">
-                    <h3>زبان‌های خارجی</h3>
-                    <p>تسلط کامل به زبان انگلیسی تخصصی و آشنایی با زبان پرتغالی.</p>
-                </div>
-            </section>
-
-        </div>
-
-        <footer>
-            <p>© کلیه حقوق برای وب‌سایت شخصی سید اسماعیل ربانی محفوظ است | میزبانی پایدار بر روی GitHub Pages</p>
-        </footer>
-
     </div>
-
 </body>
 </html>
