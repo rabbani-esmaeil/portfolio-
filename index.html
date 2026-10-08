@@ -395,5 +395,22 @@
             <p>© ۱۴۰۵ - سید اسماعیل ربانی. کلیه حقوق محفوظ است.</p>
         </footer>
     </div>
+    <section id="music-portfolio" style="padding: 40px 20px; text-align: center;">
+  <h2>پورتفولیو موسیقی من</h2>
+  
+  <div style="display: flex; flex-direction: column; gap: 20px; align-items: center; margin-top: 20px;">
+    <!-- حلقه تکرار Eleventy برای نمایش موسیقی‌ها -->
+    {% for item in collections.music %}
+      <div style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; width: 90%; max-width: 600px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        <h3 style="margin-top: 0;">{{ item.data.title }}</h3>
+        <p style="color: #555;">{{ item.data.description }}</p>
+        <audio controls style="width: 100%; margin-top: 15px;">
+          <source src="{{ item.data.audio_file }}" type="audio/mpeg">
+          مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
+        </audio>
+      </div>
+    {% endfor %}
+  </div>
+</section>
 </body>
 </html>
