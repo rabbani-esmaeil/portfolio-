@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: your-github-username/your-repo-name # نام کاربری و نام مخزن (Repo) خودتون رو اینجا بنویسید
+  branch: main # شاخه‌ای که سایت از روی آن خوانده می‌شود
+
+media_folder: "uploads" # پوشه‌ای که فایل‌های صوتی یا تصاویر در آن ذخیره می‌شوند
+public_folder: "/uploads"
+
+collections:
+  - name: "music"
+    label: "پورتفولیو موسیقی"
+    folder: "content/music"
+    create: true
+    fields:
+      - {name: "title", label: "نام قطعه", widget: "string"}
+      - {name: "description", label: "توضیحات", widget: "text"}
+      - {name: "audio_file", label: "فایل صوتی (MP3)", widget: "file"}
