@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  repo: rabbani-esmaeil/portfolio- # نام کاربری گیت‌هاب و نام مخزن‌تون رو اینجا بنویسید
+  name: github
+  repo: rabbani-esmaeil/portfolio-
   branch: main
 
 media_folder: "uploads"
