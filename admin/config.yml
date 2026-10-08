@@ -1,9 +1,9 @@
 backend:
   name: github
-  repo: your-github-username/your-repo-name # نام کاربری و نام مخزن (Repo) خودتون رو اینجا بنویسید
-  branch: main # شاخه‌ای که سایت از روی آن خوانده می‌شود
+  repo: rabbani-esmaeil/portfolio- # نام کاربری گیت‌هاب و نام مخزن‌تون رو اینجا بنویسید
+  branch: main
 
-media_folder: "uploads" # پوشه‌ای که فایل‌های صوتی یا تصاویر در آن ذخیره می‌شوند
+media_folder: "uploads"
 public_folder: "/uploads"
 
 collections:
