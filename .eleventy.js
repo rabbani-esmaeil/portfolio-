@@ -1,11 +1,10 @@
 module.exports = function(eleventyConfig) {
-  // این خطوط باعث می‌شوند پوشه پنل ادمین و فایل‌های موزیک مستقیماً در سایت نهایی کپی شوند
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("uploads");
   
-  // مهم: اگر فایل استایل (CSS) یا پوشه عکس دارید، نام آن‌ها را مانند الگوهای زیر اضافه کنید:
-  // eleventyConfig.addPassthroughCopy("style.css");
-  // eleventyConfig.addPassthroughCopy("images");
+  // این خطوط برای کپی شدن عکس‌ها در سایت نهایی اضافه می‌شوند
+  eleventyConfig.addPassthroughCopy("profile.jpg");
+  eleventyConfig.addPassthroughCopy("avatar.png");
 
   return {
     dir: {
