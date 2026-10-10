@@ -20,7 +20,7 @@ collections:
     label: "سوابق حرفه‌ای و اجرایی"
     folder: "content/resume"
     create: true
-    slug: "{{slug}}"
+    slug: "item-{{year}}{{month}}{{day}}-{{minute}}"
     fields:
       - {label: "عنوان سمت / شغل", name: "title", widget: "string"}
       - {label: "نام سازمان یا شرکت", name: "company", widget: "string"}
