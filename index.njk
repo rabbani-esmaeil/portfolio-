@@ -1,416 +1,154 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سید اسماعیل ربانی | رزومه و پورتفولیو حرفه‌ای</title>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>وب‌سایت شخصی اسماعیل ربانی</title>
+  
+  <!-- اسکریپت ورود به پنل نتلایف -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <style>
+    /* تنظیمات پایه و اسکرول نرم */
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: 'Vazir', 'B Nazanin', Tahoma, sans-serif; 
+      background-color: #121212; 
+      color: #e0e0e0; 
+      margin: 0; 
+      padding: 0; 
+      line-height: 1.8; 
+    }
     
-    <style>
-        :root {
-            --bg-primary: #090d16;
-            --bg-secondary: #0f172a;
-            --bg-card: rgba(30, 41, 59, 0.6);
-            --bg-card-hover: rgba(30, 41, 59, 0.9);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(56, 189, 248, 0.3);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
-            --accent-glow: rgba(56, 189, 248, 0.15);
-        }
+    /* منوی بالای سایت (ثابت) */
+    header { 
+      background-color: #1e1e1e; 
+      padding: 15px 30px; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5); 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      flex-wrap: wrap;
+    }
+    header h1 { margin: 0; font-size: 1.4rem; color: #fff; }
+    header h1 span { font-size: 0.85rem; color: #aaa; font-weight: normal; }
+    nav a { 
+      color: #e0e0e0; 
+      text-decoration: none; 
+      margin: 0 10px; 
+      font-weight: bold; 
+      transition: color 0.3s; 
+    }
+    nav a:hover { color: #ff4081; }
 
-        * {
-            box-sizing: border-box;
-            transition: all 0.25s ease;
-        }
+    /* قالب‌بندی بخش‌ها */
+    section { 
+      padding: 80px 20px; 
+      min-height: 60vh; 
+      max-width: 900px; 
+      margin: 0 auto; 
+    }
+    h2 { 
+      border-bottom: 2px solid #ff4081; 
+      padding-bottom: 10px; 
+      margin-bottom: 30px; 
+      color: #fff;
+    }
 
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            font-family: 'Vazirmatn', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.7;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.03) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.03) 0%, transparent 40%);
-            background-attachment: fixed;
-        }
+    /* استایل پورتفولیو موسیقی */
+    .music-list { display: flex; flex-direction: column; gap: 20px; }
+    .music-item { 
+      background-color: #1e1e1e; 
+      padding: 20px; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+    }
+    .music-item h3 { margin-top: 0; color: #fff; }
+    .music-item p { color: #aaa; font-size: 0.95rem; }
+    audio { width: 100%; margin-top: 15px; outline: none; }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            padding: 50px 30px;
-            border-radius: 24px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 50px;
-            text-align: center;
-            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; left: 0;
-            height: 3px;
-            background: var(--accent-gradient);
-        }
-
-        .avatar-container {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 25px auto;
-        }
-
-        .avatar {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 3px solid var(--accent);
-            object-fit: cover;
-            box-shadow: 0 0 25px var(--accent-glow);
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 0 0 10px 0;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-role {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-
-        .hero-bio {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            max-width: 650px;
-            margin: 0 auto 25px auto;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
-        .social-btn:hover {
-            background: var(--accent);
-            color: var(--bg-primary);
-            border-color: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px var(--accent-glow);
-        }
-
-        /* Skills Badges */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 15px;
-        }
-
-        .skill-badge {
-            background: rgba(56, 189, 248, 0.08);
-            color: var(--accent);
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 500;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-
-        /* Section Header */
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 30px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--text-main);
-            border-right: 4px solid var(--accent);
-            padding-right: 12px;
-        }
-
-        .section-title i {
-            color: var(--accent);
-        }
-
-        /* Timeline / Experience Cards */
-        .timeline {
-            position: relative;
-        }
-
-        .exp-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            border-radius: 16px;
-            margin-bottom: 25px;
-            position: relative;
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
-        }
-
-        .exp-card:hover {
-            border-color: var(--border-hover);
-            background: var(--bg-card-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 15px 35px -10px rgba(56, 189, 248, 0.1);
-        }
-
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 8px;
-        }
-
-        .exp-title {
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: var(--text-main);
-        }
-
-        .exp-date {
-            font-size: 0.8rem;
-            color: var(--accent);
-            background: rgba(56, 189, 248, 0.1);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-weight: 600;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-
-        .exp-org {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 500;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .exp-org i {
-            font-size: 0.85rem;
-        }
-
-        ul {
-            padding-right: 20px;
-            margin: 0;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        li {
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-
-        li::marker {
-            color: var(--accent);
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 25px;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .container {
-                padding: 30px 15px;
-            }
-            .hero {
-                padding: 30px 20px;
-            }
-            .exp-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 5px;
-            }
-        }
-    </style>
+    /* فوتر و بخش تماس */
+    .contact-info p { font-size: 1.1rem; }
+    .contact-info a { color: #ff4081; text-decoration: none; }
+    footer { 
+      background-color: #1e1e1e; 
+      text-align: center; 
+      padding: 20px; 
+      border-top: 1px solid #333; 
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <header class="hero">
-            <div class="avatar-container">
-                <img src="profile.jpg" alt="سید اسماعیل ربانی" class="avatar" onerror="this.src='https://ui-avatars.com/api/?name=Esmaeil+Rabbani&size=200&background=090d16&color=38bdf8'">
-            </div>
-            <h1>سید اسماعیل ربانی</h1>
-            <p class="hero-role">کارشناس ارشد مهندسی هوافضا | مدیر راهبردی فناوری و اجرایی</p>
-            <p class="hero-bio">
-                متمرکز بر راهبری طرح‌های کلان فناوری، سیاست‌گذاری‌های نوآوری و مدیریت اجرایی در نهادهای عالی کشور.
-            </p>
-            
-            <div class="skills-container">
-                <span class="skill-badge">مدیریت راهبردی</span>
-                <span class="skill-badge">اقتصاد دانش‌بنیان</span>
-                <span class="skill-badge">سیاست‌گذاری فناوری</span>
-                <span class="skill-badge">مدیریت اجرایی</span>
-            </div>
 
-            <div class="social-links">
-                <a href="mailto:your-email@domain.com" class="social-btn" title="ارسال ایمیل"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://linkedin.com" target="_blank" class="social-btn" title="لینکدین"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://github.com" target="_blank" class="social-btn" title="گیت‌هاب"><i class="fa-brands fa-github"></i></a>
-                <a href="tel:your-phone" class="social-btn" title="تماس"><i class="fa-solid fa-phone"></i></a>
-            </div>
-        </header>
+  <!-- نوار منو -->
+  <header>
+    <h1>اسماعیل ربانی<br><span>مهندس و هنرمند</span></h1>
+    <nav>
+      <a href="#resume">سوابق حرفه‌ای</a>
+      <a href="#extracurricular">موسیقی و هنر</a>
+      <a href="#contact">تماس با من</a>
+    </nav>
+  </header>
 
-        <!-- Experience Section -->
-        <section class="timeline">
-            <h2 class="section-title"><i class="fa-solid fa-business-time"></i> سوابق حرفه‌ای</h2>
-            
-            <div class="exp-card">
-                <div class="exp-header">
-                    <div class="exp-title">مسئول بررسی و پیگیری‌های ویژه حوزه ریاست</div>
-                    <div class="exp-date">بهمن ۱۴۰۴ - اکنون</div>
-                </div>
-                <div class="exp-org"><i class="fa-solid fa-building-columns"></i> معاونت علمی، فناوری و اقتصاد دانش‌بنیان ریاست‌جمهوری</div>
-                <ul>
-                    <li>پیگیری مصوبات سفرهای استانی معاون علمی رئیس‌جمهور</li>
-                    <li>پیگیری مصوبات شورای مدیران معاونت علمی</li>
-                    <li>پیگیری و تسریع گردش مکاتبات ریاست‌جمهوری و معاون اول در بدنه معاونت</li>
-                    <li>پیگیری دستورات خاص معاون علمی و مدیرکل حوزه ریاست</li>
-                </ul>
-            </div>
+  <!-- بخش اول: رزومه -->
+  <section id="resume">
+    <h2>سوابق حرفه‌ای و اجرایی</h2>
+    <p>
+      متن رزومه و فعالیت‌های کاری شما در این قسمت قرار می‌گیرد. 
+      می‌توانیم در مرحله بعدی، این بخش را هم به پنل ادمین متصل کنیم تا بتوانید سوابق جدید را بدون تغییر کد، مستقیماً از طریق پنل اضافه کنید.
+    </p>
+  </section>
 
-            <div class="exp-card">
-                <div class="exp-header">
-                    <div class="exp-title">معاون اجرایی حوزه ریاست و روابط عمومی</div>
-                    <div class="exp-date">آذر ۱۴۰۳ - بهمن ۱۴۰۴</div>
-                </div>
-                <div class="exp-org"><i class="fa-solid fa-plane"></i> سازمان هواپیمایی کشوری</div>
-                <ul>
-                    <li>دبیری جلسات شورای معاونین و مدیران سازمان</li>
-                    <li>مدیریت مکاتبات ریاست سازمان و تفویض اختیار صدور دستور</li>
-                    <li>عضویت در شورای راهبری سازمان (تدوین راهبردها و برنامه‌ها)</li>
-                    <li>عضویت در کمیته حمل و نقل هوایی کوچک</li>
-                </ul>
-            </div>
-
-            <div class="exp-card">
-                <div class="exp-header">
-                    <div class="exp-title">رئیس هیئت‌مدیره و نماینده معاونت علمی در هیئت‌مدیره</div>
-                    <div class="exp-date">اردیبهشت ۱۴۰۳ - شهریور ۱۴۰۴</div>
-                </div>
-                <div class="exp-org"><i class="fa-solid fa-shield-halved"></i> صندوق پژوهش و فناوری توسعه فناوری‌های راهبردی</div>
-                <ul>
-                    <li>هدایت و راهبری جلسات هیأت‌مدیره و نظارت بر اجرای مصوبات</li>
-                    <li>نظارت راهبردی بر تحقق اهداف حمایتی از نوآوری و فناوری</li>
-                    <li>نمایندگی منافع و سیاست‌های معاونت علمی در تصمیم‌گیری‌های کلان</li>
-                    <li>نظارت بر شفافیت مالی و تعامل با ذی‌نفعان کلیدی</li>
-                </ul>
-            </div>
-
-            <div class="exp-card">
-                <div class="exp-header">
-                    <div class="exp-title">کارشناس ارشد حوزه ریاست</div>
-                    <div class="exp-date">آذر ۱۴۰۱ - آبان ۱۴۰۳</div>
-                </div>
-                <div class="exp-org"><i class="fa-solid fa-building-columns"></i> معاونت علمی، فناوری و اقتصاد دانش‌بنیان</div>
-                <ul>
-                    <li>مدیریت مکاتبات معاون رئیس‌جمهور و تفویض اختیار</li>
-                    <li>جانشین معاون در سامانه مدیریت حمایت‌های مالی</li>
-                    <li>برنامه‌ریزی سفرهای استانی و ارزیابی طرح‌های توسعه‌ای</li>
-                    <li>عضویت در کمیته مشترک با صندوق نوآوری و شکوفایی</li>
-                </ul>
-            </div>
-
-            <div class="exp-card">
-                <div class="exp-header">
-                    <div class="exp-title">مسئول امور شرکت‌های دانش‌بنیان و نظارت بر طرح‌ها</div>
-                    <div class="exp-date">فروردین ۱۳۹۸ - آبان ۱۴۰۱</div>
-                </div>
-                <div class="exp-org"><i class="fa-solid fa-droplet"></i> ستاد توسعه فناوری‌های آب، خشکسالی و محیط‌زیست</div>
-                <ul>
-                    <li>مدیریت اجرایی رویداد سالانه ستاد با حضور ۱۰۰ شرکت دانش‌بنیان</li>
-                    <li>کارشناس مسئول مگاپروژه «چشمه» (آب‌های خلیج فارس)</li>
-                    <li>کارشناس مدیریت دانش مگاپروژه «آب ژرف»</li>
-                    <li>شناسایی و شبکه‌سازی میان شرکت‌های دانش‌بنیان حوزه آب</li>
-                </ul>
-            </div>
-
-            <div class="exp-card">
-                <div class="exp-header">
-                    <div class="exp-title">مدیر بخش ترویج و فرهنگ‌سازی</div>
-                    <div class="exp-date">اسفند ۱۳۹۴ - اسفند ۱۳۹۷</div>
-                </div>
-                <div class="exp-org"><i class="fa-solid fa-rocket"></i> ستاد توسعه فناوری و صنایع هوایی و هوانوردی</div>
-                <ul>
-                    <li>مدیر پروژه تجهیز پژوهش‌سراهای دانش‌آموزی هوافضا</li>
-                    <li>مدیر پروژه جشنواره ایده‌بازار هوایی و هوانوردی</li>
-                    <li>نظارت و داوری طرح‌های پژوهشی پهپادی</li>
-                    <li>مدیریت ارزیابی اختراعات حوزه هوایی</li>
-                </ul>
-            </div>
-        </section>
-
-        <footer>
-            <p>© ۱۴۰۵ - سید اسماعیل ربانی. کلیه حقوق محفوظ است.</p>
-        </footer>
+  <!-- بخش دوم: پورتفولیو موسیقی -->
+  <section id="extracurricular">
+    <h2>موسیقی و علاقه‌مندی‌ها</h2>
+    <div class="music-list">
+      <!-- حلقه تکرار Eleventy برای نمایش موسیقی‌های آپلودی -->
+      {% for item in collections.music %}
+        <div class="music-item">
+          <h3>{{ item.data.title }}</h3>
+          <p>{{ item.data.description }}</p>
+          <audio controls>
+            <source src="{{ item.data.audio_file }}" type="audio/mpeg">
+            مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
+          </audio>
+        </div>
+      {% else %}
+        <p>هنوز قطعه موسیقی‌ای اضافه نشده است.</p>
+      {% endfor %}
     </div>
-    <section id="music-portfolio" style="padding: 40px 20px; text-align: center;">
-  <h2>پورتفولیو موسیقی من</h2>
-  
-  <div style="display: flex; flex-direction: column; gap: 20px; align-items: center; margin-top: 20px;">
-    <!-- حلقه تکرار Eleventy برای نمایش موسیقی‌ها -->
-    {% for item in collections.music %}
-      <div style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; width: 90%; max-width: 600px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-        <h3 style="margin-top: 0;">{{ item.data.title }}</h3>
-        <p style="color: #555;">{{ item.data.description }}</p>
-        <audio controls style="width: 100%; margin-top: 15px;">
-          <source src="{{ item.data.audio_file }}" type="audio/mpeg">
-          مرورگر شما از پخش صدا پشتیبانی نمی‌کند.
-        </audio>
-      </div>
-    {% endfor %}
-  </div>
-</section>
+  </section>
+
+  <!-- بخش سوم: تماس با من -->
+  <section id="contact">
+    <h2>تماس با من</h2>
+    <div class="contact-info">
+      <p>برای ارتباط می‌توانید از طریق ایمیل زیر اقدام کنید:</p>
+      <p>📧 ایمیل: <a href="mailto:rabbaniesmaeil@gmail.com">rabbaniesmaeil@gmail.com</a></p>
+      <p>📞 موبایل: ۰۹۱۲۳۴۵۶۷۸۹ (این شماره را ویرایش کنید)</p>
+    </div>
+  </section>
+
+  <!-- فوتر -->
+  <footer>
+    <p>&copy; ۲۰۲۶ اسماعیل ربانی. تمامی حقوق محفوظ است.</p>
+  </footer>
+
+  <!-- فعال‌سازی ابزار شناسایی نتلایف -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.reload();
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
