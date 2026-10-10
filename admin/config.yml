@@ -10,11 +10,13 @@ collections:
     label: "پورتفولیو موسیقی"
     folder: "content/music"
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {name: "title", label: "نام قطعه", widget: "string"}
-      - {name: "description", label: "توضیحات", widget: "text"}
-      - {name: "audio_file", label: "فایل صوتی (MP3)", widget: "file"}
-- name: "resume"
+      - {label: "عنوان قطعه", name: "title", widget: "string"}
+      - {label: "توضیحات", name: "description", widget: "text"}
+      - {label: "فایل صوتی", name: "audio_file", widget: "file"}
+
+  - name: "resume"
     label: "سوابق حرفه‌ای و اجرایی"
     folder: "content/resume"
     create: true
@@ -22,5 +24,5 @@ collections:
     fields:
       - {label: "عنوان سمت / شغل", name: "title", widget: "string"}
       - {label: "نام سازمان یا شرکت", name: "company", widget: "string"}
-      - {label: "بازه زمانی (مثلاً ۱۴۰۱ تا کنون)", name: "date_range", widget: "string"}
-      - {label: "توضیحات وظایف و دستاوردها", name: "body", widget: "markdown"}
+      - {label: "بازه زمانی", name: "date_range", widget: "string"}
+      - {label: "توضیحات", name: "body", widget: "markdown"}
