@@ -14,3 +14,13 @@ collections:
       - {name: "title", label: "نام قطعه", widget: "string"}
       - {name: "description", label: "توضیحات", widget: "text"}
       - {name: "audio_file", label: "فایل صوتی (MP3)", widget: "file"}
+- name: "resume"
+    label: "سوابق حرفه‌ای و اجرایی"
+    folder: "content/resume"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "عنوان سمت / شغل", name: "title", widget: "string"}
+      - {label: "نام سازمان یا شرکت", name: "company", widget: "string"}
+      - {label: "بازه زمانی (مثلاً ۱۴۰۱ تا کنون)", name: "date_range", widget: "string"}
+      - {label: "توضیحات وظایف و دستاوردها", name: "body", widget: "markdown"}
