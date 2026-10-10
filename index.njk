@@ -99,12 +99,22 @@
     <img src="profile.jpg" alt="اسماعیل ربانی" style="width: 180px; height: 180px; border-radius: 50%; border: 3px solid #ff4081; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
   </div>
   <!-- بخش اول: رزومه -->
+  <!-- بخش اول: رزومه -->
   <section id="resume">
     <h2>سوابق حرفه‌ای و اجرایی</h2>
-    <p>
-      متن رزومه و فعالیت‌های کاری شما در این قسمت قرار می‌گیرد. 
-      می‌توانیم در مرحله بعدی، این بخش را هم به پنل ادمین متصل کنیم تا بتوانید سوابق جدید را بدون تغییر کد، مستقیماً از طریق پنل اضافه کنید.
-    </p>
+    <div style="display: flex; flex-direction: column; gap: 15px;">
+      {% for item in collections.resume %}
+        <div style="background-color: #1e1e1e; padding: 20px; border-radius: 8px; border-right: 4px solid #ff4081; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+          <h3 style="margin: 0; color: #fff;">{{ item.data.title }}</h3>
+          <p style="margin: 5px 0; color: #aaa; font-weight: bold;">{{ item.data.company }} <span style="color: #ff4081; font-size: 0.9rem; float: left;">{{ item.data.date_range }}</span></p>
+          <div style="color: #ccc; margin-top: 10px; font-size: 0.95rem;">
+            {{ item.templateContent | safe }}
+          </div>
+        </div>
+      {% else %}
+        <p>در حال بروزرسانی سوابق اجرایی...</p>
+      {% endfor %}
+    </div>
   </section>
 
   <!-- بخش دوم: پورتفولیو موسیقی -->
