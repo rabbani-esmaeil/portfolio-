@@ -122,7 +122,7 @@
     <h2>موسیقی و علاقه‌مندی‌ها</h2>
     <div class="music-list">
       <!-- حلقه تکرار Eleventy برای نمایش موسیقی‌های آپلودی -->
-      {% for item in collections.music %}
+      {% for item in collections.music | reverse %}
         <div class="music-item">
           <h3>{{ item.data.title }}</h3>
           <p>{{ item.data.description }}</p>
