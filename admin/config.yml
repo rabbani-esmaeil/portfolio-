@@ -1,8 +1,7 @@
 backend:
   name: git-gateway
   branch: main
-  identity_url: "https://poetic-crumble-64a2d2.netlify.app/.netlify/identity"
-  gateway_url: "https://poetic-crumble-64a2d2.netlify.app/.netlify/git"
+  site_domain: poetic-crumble-64a2d2.netlify.app
 media_folder: "uploads"
 public_folder: "/uploads"
 
